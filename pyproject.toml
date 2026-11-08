@@ -1,0 +1,23 @@
+[project]
+name = "solarsystem"
+version = "0.1.0"
+description = "Translate scientific PDFs and leave formulas, figures, and annotations where they are."
+requires-python = ">=3.11"
+dependencies = ["pymupdf>=1.24"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+solarsystem = "solarsystem.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
